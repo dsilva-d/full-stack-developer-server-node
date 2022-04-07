@@ -19,7 +19,8 @@ export default [
                    "stats": {
                      "comments": 123,
                      "retuits": 234,
-                     "likes": 345
+                     "likes": 345,
+                     "dislikes": 10
                    }
                  },
                  {
@@ -43,7 +44,8 @@ export default [
                    "stats": {
                      "comments": 123,
                      "retuits": 234,
-                     "likes": 345
+                     "likes": 345,
+                     "dislikes": 10
                    }
                  },
                  {
@@ -65,7 +67,8 @@ export default [
                    "stats": {
                      "comments": 123,
                      "retuits": 234,
-                     "likes": 345
+                     "likes": 345,
+                     "dislikes": 10
                    }
                  },
                  {
@@ -86,7 +89,8 @@ export default [
                    "stats": {
                      "comments": 123,
                      "retuits": 234,
-                     "likes": 345
+                     "likes": 345,
+                     "dislikes": 10
                    }
                  },
                  {
@@ -107,7 +111,8 @@ export default [
                    "stats": {
                      "comments": 123,
                      "retuits": 234,
-                     "likes": 345
+                     "likes": 345,
+                     "dislikes": 10
                    }
                  }
                ];
