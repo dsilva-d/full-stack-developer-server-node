@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 userController(app);
 tuitsController(app);
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
 
 
 

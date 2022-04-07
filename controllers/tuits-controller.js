@@ -7,8 +7,17 @@ const createTuit = (req, res) => {
     newTuit.postedBy.username = req.query.postedBy.username;
  }
  newTuit._id = (new Date()).getTime()+'';
- newTuit.likes = 0;
  newTuit.tuit = req.query.tuit;
+ newTuit.topic = "";
+ newTuit.liked = false;
+ newTuit.verified = false;
+ newTuit.handle = "Java";
+ newTuit.title = "";
+ newTuit.logoImage = "../java.png";
+ newTuit.avatarImage = "../java.png";
+ newTuit.time = "Now";
+ newTuit.stats = {"comments": 0, "retuits": 0, "likes": 0};
+ newTuit.postedBy = {"username": "java"}
  tuits.push(newTuit);
  res.json(newTuit);
 }
@@ -19,9 +28,16 @@ const updateTuit = (req, res) => {
  const tuitdIdToUpdate = req.params.tid;
  const updatedTuit = req.body;
  const currentTuit = tuits.find(tuit => tuit._id === tuitdIdToUpdate);
- updatedTuit.tuit = req.query.tuit;
+ updatedTuit.tuit = currentTuit.tuit;
+ updatedTuit.liked = req.query.liked;
+ updatedTuit.verified = currentTuit.verified;
+ updatedTuit.handle = currentTuit.handle;
+ updatedTuit.time = "Now";
+ updatedTuit.logoImage = currentTuit.logoImage;
+ updatedTuit.avatarImage = currentTuit.avatarImage;
+ updatedTuit.attachments = currentTuit.attachments;
  updatedTuit._id = tuitdIdToUpdate;
- updatedTuit.likes = currentTuit.likes;
+ updatedTuit.stats = currentTuit.stats;
  if(currentTuit.postedBy) {
     updatedTuit.postedBy = currentTuit.postedBy;
  }
