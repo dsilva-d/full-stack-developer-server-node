@@ -7,8 +7,10 @@ const createTuit = (req, res) => {
     newTuit.postedBy.username = req.query.postedBy.username;
  }
  newTuit._id = (new Date()).getTime()+'';
- newTuit.tuit = req.params.tuit;
- newTuit.topic = "";
+ //newTuit.tuit = "test!";
+ //newTuit.tuit = req.query.tuit;
+
+ newTuit.topic = "Web Development";
  newTuit.liked = false;
  newTuit.disliked = false;
  newTuit.verified = false;
@@ -28,26 +30,12 @@ const findAllTuits = (req, res) => res.json(tuits);
 const updateTuit = (req, res) => {
  const tuitdIdToUpdate = req.params.tid;
  const updatedTuit = req.body;
- const currentTuit = tuits.find(tuit => tuit._id === tuitdIdToUpdate);
- updatedTuit.tuit = currentTuit.tuit;
- updatedTuit.liked = req.query.liked;
- updatedTuit.disliked = req.query.disliked;
- updatedTuit.verified = currentTuit.verified;
- updatedTuit.handle = currentTuit.handle;
- updatedTuit.time = "Now";
- updatedTuit.logoImage = currentTuit.logoImage;
- updatedTuit.avatarImage = currentTuit.avatarImage;
- updatedTuit.attachments = currentTuit.attachments;
- updatedTuit._id = tuitdIdToUpdate;
- if(currentTuit.postedBy) {
-    updatedTuit.postedBy = currentTuit.postedBy;
- }
-
  tuits = tuits.map(t => t._id === tuitdIdToUpdate ? updatedTuit : t);
  res.sendStatus(200);
 }
 
 const deleteTuit = (req, res) => {
+ console.log("Deleted!");
  const tuitdIdToDelete = req.params.tid;
  tuits = tuits.filter(t => t._id !== tuitdIdToDelete);
  res.sendStatus(200);
