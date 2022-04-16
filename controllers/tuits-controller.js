@@ -35,7 +35,9 @@ const findAllTuits = async (req, res) => {
 const updateTuit = (req, res) => {
  const tuitdIdToUpdate = req.params['tid'];
  const updatedTuit = req.body;
- const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updatedTuit);
+ const status = async (dispatch) => {
+    await tuitsDao.updateTuit(tuitdIdToUpdate, updatedTuit);
+    };
  //tuits = tuits.map(t => t._id === tuitdIdToUpdate ? updatedTuit : t);
  res.send(status);
 }
