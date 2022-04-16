@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import helloController from "./controllers/hello-controller.js";
 import userController from "./controllers/user-controller.js";
 import tuitsController from "./controllers/tuits-controller.js";
-const DB_CONNECTION_STRING = 'mongodb+srv://dsilvad:YToHRtbMsKXehyvh@cluster0.6pra5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const DB_CONNECTION_STRING = "mongodb+srv://dsilvad:YToHRtbMsKXehyvh@cluster0.6pra5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 // || 'mongodb://localhost:27017/webdev'
 mongoose.connect(CONNECTION_STRING);
